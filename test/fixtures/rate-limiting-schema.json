@@ -1,0 +1,13 @@
+{
+    "fields": {
+        "hide_credentials": {
+            "default": false,
+            "type": "boolean"
+        },
+        "key_names": {
+            "default": "function",
+            "required": true,
+            "type": "array"
+        }
+    }
+}

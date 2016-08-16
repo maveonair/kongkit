@@ -1,0 +1,12 @@
+{
+    "id": "4d924084-1adb-40a5-c042-63b19db421d1",
+    "api_id": "5fd1z584-1adb-40a5-c042-63b19db49x21",
+    "consumer_id": "a3dX2dh2-1adb-40a5-c042-63b19dbx83hF4",
+    "name": "rate-limiting",
+    "config": {
+        "minute": 10,
+        "hour": 500
+    },
+    "enabled": true,
+    "created_at": 1422386534
+}

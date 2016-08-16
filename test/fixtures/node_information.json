@@ -1,0 +1,14 @@
+{
+  "hostname": "localhost",
+  "lua_version": "LuaJIT 2.1.0-alpha",
+  "plugins": {
+    "available_on_server": [
+    ],
+    "enabled_in_cluster": [
+    ]
+  },
+  "configuration" : {
+  },
+  "tagline": "Welcome to Kong",
+  "version": "0.8.0"
+}

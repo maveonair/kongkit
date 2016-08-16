@@ -1,0 +1,8 @@
+{
+    "id": "4d924084-1adb-40a5-c042-63b19db421d1",
+    "name": "mockbin",
+    "request_host": "mockbin.com",
+    "upstream_url": "http://mockbin.com",
+    "preserve_host": false,
+    "created_at": 1422386534
+}

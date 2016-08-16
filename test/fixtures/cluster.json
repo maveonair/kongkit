@@ -1,0 +1,20 @@
+{
+    "total": 3,
+    "data": [
+        {
+            "address": "192.168.1.107:7946",
+            "name": "kong.prod1_7946",
+            "status": "alive"
+        },
+        {
+            "address": "192.168.2.127:7946",
+            "name": "kong.prod2_7946",
+            "status": "failed"
+        },
+        {
+            "address": "192.168.3.112:8484",
+            "name": "kong.prod3_8484",
+            "status": "left"
+        }
+    ]
+}
