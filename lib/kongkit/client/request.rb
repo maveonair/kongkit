@@ -44,7 +44,7 @@ module Kongkit
       private
 
       def parse(response)
-        Kongkit::Client::Resource.new(self, JSON.parse(response.body, symbolize_names: true))
+        Kongkit::Client::Resource.new(self, JSON.parse(response.body, symbolize_names: true), response.code)
       end
     end
   end

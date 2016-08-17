@@ -1,9 +1,10 @@
 module Kongkit
   class Client
     class Resource
-      def initialize(client, data)
-        @client = client
-        @data = data
+      def initialize(client, data, status_code)
+        @client      = client
+        @data        = data
+        @status_code = status_code
       end
 
       # Allow fields to be retrieved via Hash notation
@@ -31,9 +32,16 @@ module Kongkit
         data.inspect
       end
 
+      # Returns true if there is any error
+      #
+      # @return [Boolean] `true` if the response was an error
+      def error?
+        status_code >= 400
+      end
+
       private
 
-      attr_reader :client, :data
+      attr_reader :client, :data, :status_code
     end
   end
 end
