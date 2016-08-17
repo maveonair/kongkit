@@ -1,6 +1,8 @@
 module Kongkit
   class Client
     class Resource
+      include Enumerable
+
       def initialize(client, data, status_code)
         @client      = client
         @data        = data
@@ -15,6 +17,13 @@ module Kongkit
         data[key]
       rescue NoMethodError
         nil
+      end
+
+      # Calls block once for each key in the data hash, passing the key-value pair as parameters
+      #
+      # @return [Enumerator] Enumerator
+      def each(&block)
+        data.each(&block)
       end
 
       # Retrieves the next resource
