@@ -1,6 +1,6 @@
 # Kongkit
 
-Ruby library for the Kong API.
+Ruby library for the Kong API. See [documentation](http://www.rubydoc.info/github/maveonair/kongkit) for details.
 
 ## Installation
 
