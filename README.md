@@ -36,7 +36,7 @@ client = Kongkit::Client.new('https://kong.enterprise.io:8001')
 client.add_api(name: 'mockbin', request_host: 'mockbin.com', upstream_url: 'http://mockbin.com', preserve_host: true)
 
 # Add Plugin
-client.add_plugin('mockbin', name: 'rate-limiting', config.minute: 20, config.hour: 500)
+client.add_plugin('mockbin', name: 'rate-limiting', 'config.minute': 20, 'config.hour': 500)
 ```
 
 ### Pagination
