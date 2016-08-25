@@ -6,7 +6,7 @@ module Kongkit
       # Retrieve the cluster status, returning information for each node in the cluster.
       #
       # @see https://getkong.org/docs/0.8.x/admin-api/#retrieve-cluster-status
-      # @return [Hash] Cluster status
+      # @return [Kongkit::Client::Resource] Cluster status
       def cluster_status
         get('/cluster')
       end

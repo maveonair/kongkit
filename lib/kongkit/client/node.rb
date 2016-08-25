@@ -6,7 +6,7 @@ module Kongkit
       # Retrieve generic details about a node.
       #
       # @see https://getkong.org/docs/0.8.x/admin-api/#retrieve-node-information
-      # @return [Hash] Node information
+      # @return [Kongkit::Client::Resource] Node information
       def node_information
         get('/')
       end
@@ -22,7 +22,7 @@ module Kongkit
       # every existing nginx monitoring tool or agent can be used.
       #
       # @see https://getkong.org/docs/0.8.x/admin-api/#retrieve-node-status
-      # @return [Hash] Node status
+      # @return [Kongkit::Client::Resource] Node status
       def node_status
         get('/status')
       end

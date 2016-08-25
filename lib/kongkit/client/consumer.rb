@@ -9,7 +9,7 @@ module Kongkit
       # @option options [String] :username A filter on the list based on the consumer `username` field
       # @option options [Integer] :size A limit on the number of objects to be returned, default: 100
       # @option options [String] :offset A cursor used for pagination. Offset is an object identifier that defines a place in the list.
-      # @return [Hash] API Objects
+      # @return [Kongkit::Client::Resource] API Objects
       def consumers(options = {})
         get('/consumers', query: options)
       end
@@ -18,7 +18,7 @@ module Kongkit
       #
       # @see https://getkong.org/docs/0.8.x/admin-api/#retrieve-consumer
       # @param identifier [String] The unique identifier or the username of the consumer to retrieve
-      # @return [Hash] Consumer
+      # @return [Kongkit::Client::Resource] Consumer
       def consumer(identifier)
         get(consumer_path(identifier))
       end
@@ -30,7 +30,7 @@ module Kongkit
       # @see https://getkong.org/docs/0.8.x/admin-api/#create-consumer
       # @option attributes [String] :username The username of the consumer (semi-optional)
       # @option attributes [String] :custom_id Field for storing an existing ID for the consumer, useful for mapping Kong with users in your existing database (semi-optional)
-      # @return [Hash] Consumer
+      # @return [Kongkit::Client::Resource] Consumer
       def create_consumer(attributes)
         post('/consumers', body: attributes)
       end
@@ -43,7 +43,7 @@ module Kongkit
       # @param identifier [String] The unique identifier or the name of the consumer to update
       # @option attributes [String] :username The username of the consumer (semi-optional)
       # @option attributes [String] :custom_id Field for storing an existing ID for the consumer, useful for mapping Kong with users in your existing database (semi-optional)
-      # @return [Hash] Consumer
+      # @return [Kongkit::Client::Resource] Consumer
       def edit_consumer(identifier, attributes)
         patch(consumer_path(identifier), body: attributes)
       end
