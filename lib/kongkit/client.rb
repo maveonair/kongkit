@@ -20,15 +20,19 @@ module Kongkit
     include Node
     include Request
 
-    def initialize(url = 'http://localhost:8001')
-      @url = url
+    def initialize(configuration)
+      @configuration = configuration
 
-      self.class.base_uri(@url)
+      self.class.base_uri(configuration.url)
       self.class.headers('Accept' => 'application/json')
     end
 
     def same_url?(url)
-      @url == url
+      configuration.url == url
     end
+
+    private
+
+    attr_reader :configuration
   end
 end

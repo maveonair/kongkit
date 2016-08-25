@@ -1,16 +1,31 @@
 require 'kongkit/client'
+require 'kongkit/configuration'
 require 'kongkit/version'
 
 module Kongkit
   class << self
+    attr_accessor :configuration
+
+    def configuration
+      @@configuration ||= Kongkit::Configuration.new
+    end
+
     # API client
     #
     # @param url [String] Kong admin url
     # @return [Kongkit::Client] API wrapper
     def client(url = 'http://localhost:8001')
+      configure do |config|
+        config.url = url
+      end
+
       return @client if defined?(@client) && @client.same_url?(url)
 
-      @client = Kongkit::Client.new(url)
+      @client = Kongkit::Client.new(configuration)
+    end
+
+    def configure
+      yield(configuration)
     end
 
     private
