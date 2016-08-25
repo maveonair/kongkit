@@ -48,6 +48,13 @@ module Kongkit
         status_code >= 400
       end
 
+      # Return the JSON representation of the resource
+      #
+      # @return [Hash] JSON representation
+      def to_json
+        data.merge({status_code: status_code})
+      end
+
       private
 
       attr_reader :client, :data, :status_code

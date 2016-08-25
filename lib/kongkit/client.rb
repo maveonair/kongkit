@@ -4,6 +4,7 @@ require 'json'
 require 'kongkit/client/api_object'
 require 'kongkit/client/cluster'
 require 'kongkit/client/consumer'
+require 'kongkit/client/key_authentication'
 require 'kongkit/client/plugin_object'
 require 'kongkit/client/node'
 require 'kongkit/client/request'
@@ -16,6 +17,7 @@ module Kongkit
     include ApiObject
     include Cluster
     include Consumer
+    include KeyAuthentication
     include PluginObject
     include Node
     include Request
