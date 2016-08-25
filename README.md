@@ -49,6 +49,15 @@ first_page = Kongkit.apis(size: 5)
 next_page = first_page.next
 ```
 
+### Configuration
+
+```ruby
+Kongkit.configure do |config|
+  config.url = 'https://kong.enterprise.io:8001'
+end
+
+apis = Kongkit.apis
+```
 
 ## Development
 

@@ -12,16 +12,11 @@ module Kongkit
 
     # API client
     #
-    # @param url [String] Kong admin url
     # @return [Kongkit::Client] API wrapper
-    def client(url = 'http://localhost:8001')
-      configure do |config|
-        config.url = url
-      end
+    def client
+      return @client if defined?(@client)
 
-      return @client if defined?(@client) && @client.same_url?(url)
-
-      @client = Kongkit::Client.new(configuration)
+      @client = Kongkit::Client.new(configuration.url)
     end
 
     def configure
