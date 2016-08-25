@@ -52,7 +52,7 @@ module Kongkit
       #
       # @return [Hash] JSON representation
       def to_json
-        data.merge({status_code: status_code})
+        data.merge({status_code: status_code}).to_json
       end
 
       private
